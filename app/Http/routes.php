@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,3 +15,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Route::get('/books', 'BookController@getIndex');
+Route::get('books/show/{title?}', 'BookController@getShow');
+//Route::get('/books/create', 'BookController@getCreate');
+//Route::post('/books/create', 'BookController@postCreate');
+
+#Route::get('/books/foo', 'BookController@bar');
+
+Route::controller('/books', 'BookController');
+
+Route::get('/practice', function() {
+
+   $random = new Random();
+   return $random->getRandomInteger(1, 100);
+
+
+});
+
