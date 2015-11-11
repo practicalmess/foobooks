@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use joshtronic\LoremIpsum;
 
 class BooksTableSeeder extends Seeder
 {
@@ -36,6 +37,19 @@ class BooksTableSeeder extends Seeder
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'title' => 'I Know Why the Caged Bird Sings',
 	        'author' => 'Maya Angelou',
+	        'published' => 1969,
+	        'cover' => 'http://img1.imagesbn.com/p/9780345514400_p0_v1_s114x166.JPG',
+	        'purchase_link' => 'http://www.barnesandnoble.com/w/i-know-why-the-caged-bird-sings-maya-angelou/1100392955?ean=9780345514400',
+    	]);
+    	$lipsum = new LoremIpsum();
+    	$title = $lipsum->words(3);
+    	$faker = \Faker\Factory::create();
+    	$author = $faker->name;
+    	DB::table('books')->insert([
+	        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+	        'title' => $title,
+	        'author' => $author,
 	        'published' => 1969,
 	        'cover' => 'http://img1.imagesbn.com/p/9780345514400_p0_v1_s114x166.JPG',
 	        'purchase_link' => 'http://www.barnesandnoble.com/w/i-know-why-the-caged-bird-sings-maya-angelou/1100392955?ean=9780345514400',
