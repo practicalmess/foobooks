@@ -26,5 +26,5 @@ Route::get('books/show/{title?}', 'BookController@getShow');
 
 Route::controller('/books', 'BookController');
 
-Route::get('/practice', 'PracticeController@test');
+//Route::get('/practice', 'PracticeController@test');
 
