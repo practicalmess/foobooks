@@ -198,6 +198,7 @@ return [
 
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Random'    => 'Rych\Random\Random',
+        'LoremIpsum'=> 'joshtronic\php-loremipsum\LoremIpsum',
 
     ],
 

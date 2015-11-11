@@ -26,11 +26,5 @@ Route::get('books/show/{title?}', 'BookController@getShow');
 
 Route::controller('/books', 'BookController');
 
-Route::get('/practice', function() {
-
-   $random = new Random();
-   return $random->getRandomInteger(1, 100);
-
-
-});
+Route::get('/practice', 'PracticeController@test');
 
